@@ -5,6 +5,7 @@ var a, b, c : float;
     b = 3.3;
     c = 5 * 1;
     print( a );
+    print( "hola" );
     if(a < b)
     {
         c = 10;

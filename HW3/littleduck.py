@@ -1,3 +1,6 @@
+#---
+# LittleDuck reglex and 
+#---
 import sys
 import ply.lex as lex 
 import ply.yacc as yacc
@@ -7,7 +10,7 @@ tokens = [
     'PLUS','MINUS','TIMES','DIVIDE',
     'ID','EQUAL','GREATER_THAN','SMALLER_THAN',
     'DIFFERENT','LPARENT','RPARENT','LBRACE','RBRACE',
-    'CTEI','CTEF','COMMA','SEMICOLON','COLON',
+    'CTEI','CTEF','COMMA','SEMICOLON','COLON', 'STRING'
 ]
 
 #Regular Expressions for simple tokens
@@ -28,7 +31,7 @@ t_SEMICOLON = r';'
 t_COLON = r':'
 t_CTEI = r'[0-9]+'
 t_CTEF = r'[0-9]+\.[0-9]+'
-
+t_STRING = r'"([^\\"\n]+|\\.)*"'
 
 reserved = {
     'if' : 'COND_IF',
@@ -160,6 +163,7 @@ def p_varcte(p):
     ''' varcte : ID
             | CTEF
             | CTEI
+            | STRING
     '''
 def p_error(p):
     print("Error de sintaxis: '%s'" % p.value)
