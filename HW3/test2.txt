@@ -1,0 +1,14 @@
+program test;
+var a, b, c : float;
+{   
+    a = 1.0;
+    b = 3.3;
+    c = 5 * 1;
+    print( a );
+    if(a < b)
+    {
+        c = 10;
+    } else {
+        c = 9;
+    }; 
+}
