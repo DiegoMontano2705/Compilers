@@ -175,7 +175,7 @@ yacc.yacc()
 
 #to check if file exists
 try:
-    namef = "HW3/test2.txt"
+    namef = "HW3/PLY_LittleDuck/test2.txt"
     file = open(namef,'r')
     s = file.read()
     file.close()
